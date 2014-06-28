@@ -1,0 +1,53 @@
+
+// nth-framework
+// =================================================================================================
+
+
+
+// сброс float-ов
+
+.clearfix {
+  .clearfix();
+}
+
+
+
+// сокрытие элемента
+
+.hide {
+  display: none;
+}
+
+
+
+// сокрытие элемента с высоким приоритетом
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+
+// сокрытие элемента при печати
+
+.hidden-print {
+  @media print {
+    display: none !important;
+  }
+}
+
+
+
+// элемент, предназначенный только для «экранных читалок»
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

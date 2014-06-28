@@ -1,0 +1,323 @@
+
+// nth-framework
+// =================================================================================================
+
+
+
+.form {
+  
+  // Структура элемента формы:
+  /* 
+  <div class="form__group">
+    <label class="form__label" for="fld_1">Имя</label>
+    <input class="form__control" type="text" id="fld_1" placeholder="Введите имя">
+    <div class="form__help-block">Текст подсказки.</div>
+  </div>
+  (.form__group>label.form__label[for="fld_$"]+input.form__control[type="text" id="fld_$" placeholder="Подсказка"]+div.form__help-block{Пояснение})*1
+  */
+  
+  
+  
+  // Поле формы
+  // -----------------------------------------------------------------------------------------------
+  &__control {
+    display: block;
+    width: 100%;
+    height: @input-height-base; // base line-height + padding + border
+    padding: @padding-base-vertical @padding-base-horizontal;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    color: @text-color;
+    background-color: #fff;
+    background-image: none; // сброс стилей для Firefox-on-Android
+    border: 1px solid @border-color;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: 0;
+
+    &::-moz-placeholder           { color: @text-color; opacity: 1; }  // Firefox
+    &:-ms-input-placeholder       { color: @text-color; }              // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: @text-color; }              // Safari, Chrome, Opera 15+
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+      cursor: not-allowed;
+      background-color: @gray-50;
+      opacity: 1; // iOS fix 
+    }
+
+    // Добавления
+    
+    textarea& {
+      height: auto;
+      resize: vertical;
+    }
+  }
+  
+  
+  
+  // Название поля
+  // -----------------------------------------------------------------------------------------------
+  &__label {
+    display: inline-block;
+    margin-bottom: (@line-height-computed / 2);
+    font-weight: normal;
+  }
+  
+  
+  
+  // Пояснение / подсказка
+  // -----------------------------------------------------------------------------------------------
+  &__help-block {
+    
+  }
+  
+  
+  
+  // Обёртка каждого из полей
+  // -----------------------------------------------------------------------------------------------
+  &__group {
+    
+    margin-bottom: @line-height-computed;
+    position: relative;
+    
+    
+    // Модификаторы обёртки
+    &--textarea {
+      
+    }
+
+    
+    &--file {
+      
+    }
+
+    
+    &--select {
+      
+    }
+
+    
+    &--btns {
+      
+    }
+
+    
+    &--checkbox, 
+    &--radio {
+      
+      .form__label {
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        &[disabled],
+        &.disabled,
+        fieldset[disabled] & {
+          cursor: not-allowed;
+        }
+      }
+    }
+    
+    
+    // индивидуальное оформление флажков/радиокнопок
+      
+    &--checkbox-custom,
+    &--radio-custom {
+      
+      // флажок/радиокнопку позиционируем абсолютно
+      input[type="checkbox"],
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      // текстовой элемент будет иметь стилизацию средствами псевдоэлементов
+      .form__checkbox-text,
+      .form__radio-text {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;     // внутренний отступ под стилизованный флажок/радиокнопку
+      }
+      
+      // индивидуальный флажок не отмечен
+      input[type="checkbox"] + .form__checkbox-text {
+        
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;          // предположительный размер
+          height: 20px;         // предположительный размер
+          content: 'on';
+          background-color: @body-bg; // фоновый цвет, закрывающий оригинальный флажок
+        }
+      }
+      
+      // индивидуальный флажок отмечен (поправки к состоянию «не отмечен»)
+      input[type="checkbox"]:checked + .form__checkbox-text {
+        
+        &::before {
+          content: 'off';
+        }
+      }
+      
+      // индивидуальная радиокнопка не отмечена
+      input[type="radio"] + .form__radio-text {
+        
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;          // предположительный размер
+          height: 20px;         // предположительный размер
+          content: 'off';
+          background-color: @body-bg; // фоновый цвет, закрывающий оригинальную радиокнопку
+        }
+      }
+      
+      // индивидуальная радиокнопка отмечена (поправки к состоянию «не отмечена»)
+      input[type="radio"]:checked + .form__radio-text {
+        
+        &::before {
+          content: 'on';
+        }
+      }
+      
+    }
+    
+    
+    // смещения для идущих подряд флажков и радиокнопок
+    &--checkbox + &--checkbox,
+    &--radio + &--radio {
+      margin-top: (@line-height-computed / 2) * -1;
+    }
+    
+    
+    
+    // модификатор-обёртка нескольких полей, выстраиваемых в строку без использования модульной сетки
+    
+    /*
+    <div class="form__group  form__group--group-inline">
+      <div class="form__group  form__group--checkbox">
+        <label class="form__label">
+          <input type="checkbox"> 
+          <span class="form__checkbox-text">Запомнить меня</span>
+        </label>
+      </div>
+      <div class="form__group  form__group--checkbox">
+        <label class="form__label">
+          <input type="checkbox"> 
+          <span class="form__checkbox-text">Запомнить его</span>
+        </label>
+      </div>
+    </div>
+    */
+    
+    
+    
+    // при заполнении возникла ошибка (этот модификатор добавляется к .form__group)
+    &--has-error {
+      .form__label {
+        color: @state-danger-text;
+      }
+      .form__control {
+        border-color: @brand-danger;
+        color: @state-danger-text;
+      }
+    }
+    
+    // успешное заполнение (этот модификатор добавляется к .form__group)
+    /*
+    &--has-error {
+      .form__label {
+        color: @state-success-text;
+      }
+      .form__control {
+        border-color: @brand-success;
+        color: @state-success-text;
+      }
+    }
+    */
+    
+  }
+}
+
+
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: @line-height-computed;
+  font-size: @font-size-h2;
+  line-height: @headings-line-height;
+  color: @headings-color;
+  border: 0;
+}
+
+
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  line-height: normal;
+}
+
+
+
+input[type="file"] {
+  display: block;
+}
+
+
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+
+input[type="search"] {
+  -webkit-appearance: none; // Search inputs in iOS
+}
+
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  line-height: @input-height-base;
+  line-height: @line-height-base ~"\0";
+}
