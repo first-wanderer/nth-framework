@@ -86,8 +86,16 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  line-height: @input-height-base;
+  line-height: @line-height-base;
   line-height: @line-height-base ~"\0";
+}
+
+
+
+input[type="color"] {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 
@@ -118,12 +126,12 @@ input[type="month"] {
   &__control {
     display: block;
     width: 100%;
-    height: @input-height-base; // base line-height + padding + border
+    // height: @input-height-base; // base line-height + padding + border
     padding: @padding-base-vertical @padding-base-horizontal;
     border: 1px solid @input-border-color;
     .border-radius(@input-border-radius);
     
-    font-size: @font-size-base;
+    .font-size(@font-size-base);
     line-height: @line-height-base;
     color: @text-color;
     
@@ -131,6 +139,8 @@ input[type="month"] {
     background-image: none; // сброс стилей для Firefox-on-Android
     box-shadow: none;
     outline: 0;
+    
+    transition: all @transition-time-base linear;
 
     &::-moz-placeholder           { color: @gray; opacity: 1; }  // Firefox
     &:-ms-input-placeholder       { color: @gray; }              // Internet Explorer 10+
@@ -173,7 +183,7 @@ input[type="month"] {
   
   &__label {
     display: inline-block;
-    margin-bottom: (@line-height-computed / 2);
+    margin-bottom: (@line-height-base / 2);
     font-weight: normal;
   }
   
@@ -190,7 +200,7 @@ input[type="month"] {
   // ===============================================================================================
   
   &__group {
-    margin-bottom: @line-height-computed;
+    margin-bottom: @line-height-base;
     position: relative;
     
     
@@ -206,6 +216,9 @@ input[type="month"] {
         padding: 0;
       }
     }
+    
+    
+    &--color {}
 
     
     &--file {}
@@ -229,7 +242,7 @@ input[type="month"] {
 
       input[type="checkbox"] {
         position: absolute;
-        top: .3em;
+        top: .2em;
         left: 0;
       }
     }
@@ -248,7 +261,7 @@ input[type="month"] {
 
       input[type="radio"] {
         position: absolute;
-        top: .3em;
+        top: .2em;
         left: 0;
       }
     }
@@ -318,7 +331,7 @@ input[type="month"] {
     
     &--checkbox + &--checkbox,
     &--radio + &--radio {
-      margin-top: (@line-height-computed / 2) * -1;
+      margin-top: (@line-height-base / 2) * -1;
     }
 
     

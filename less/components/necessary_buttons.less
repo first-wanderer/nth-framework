@@ -9,7 +9,7 @@
 .btn {
   display: inline-block;
   vertical-align: middle;
-  height: @btn-height-base;
+  // height: @btn-height-base;
   padding: @padding-base-vertical @padding-base-horizontal;
   line-height: @line-height-base;
   
@@ -29,6 +29,7 @@
   
   .user-select(none);
 
+  transition: all @transition-time-base linear;
 
   &,
   &:active {
@@ -40,7 +41,9 @@
 
   &:hover,
   &:focus {
-    color: @btn-color;
+    color: @btn-color--hover;
+    background-color: @btn-bg--hover;
+    border: 1px solid @btn-border-color--hover;
     text-decoration: none;
   }
 
@@ -71,7 +74,7 @@
     }
     
     & + & {
-      margin-top: (@line-height-computed / 2);
+      margin-top: (@line-height-base / 2);
     }
   }
 }

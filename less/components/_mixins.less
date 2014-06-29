@@ -1,7 +1,22 @@
 
+// nth-framework
+
+
+
 // Сглаженные углы: пишем правило только если передано значение сглаживания более нуля
+
 .border-radius (@radius: 0) when (@radius > 1) {
   border-radius: @radius;
+}
+
+
+
+// Размер шрифта: REM и откат для говнобраузеров
+
+.font-size(@size-rem: @font-size-base) {
+  @size-px: (@size-rem * @font-size-root);
+  font-size: @size-px;
+  font-size: @size-rem;
 }
 
 
