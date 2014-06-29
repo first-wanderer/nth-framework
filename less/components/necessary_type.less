@@ -1,8 +1,10 @@
 
 // nth-framework
+
+
+
+// Общее
 // =================================================================================================
-
-
 
 html {
   font-size: 10px;
@@ -27,13 +29,13 @@ a {
 
   &:hover,
   &:focus {
-    color: @link-hover-color;
+    color: @link-color--hover;
     text-decoration: none;
   }
 
-  &:focus {
-    .tab-focus();
-  }
+  //&:focus {
+  //  .tab-focus();
+  //}
 }
 
 
@@ -88,7 +90,7 @@ ol {
 
 small,
 .small {
-  font-size: 85%;
+  font-size: unit(ceil((@font-size-small * 100) / @font-size-base),~"%"); 
 }
 
 
@@ -117,7 +119,7 @@ blockquote {
     display: block;
     font-size: 85%;
     line-height: @line-height-base;
-    color: @text-muted;
+    color: @gray;
     text-align: right;
 
     &:before {
@@ -132,7 +134,7 @@ hr {
   margin-top:    @line-height-computed;
   margin-bottom: @line-height-computed;
   border: 0;
-  border-top: 1px solid @border-color;
+  border-top: 1px solid @border-color-base;
 }
 
 
@@ -145,6 +147,9 @@ address {
 
 
 
+// Форматированный текст
+// =================================================================================================
+
 code,
 kbd,
 pre,
@@ -156,10 +161,11 @@ samp {
 
 code {
   padding: .1em .2em;
-  font-size: 90%;
+  font-size: 100%;
   color: @code-color;
   background-color: @code-bg;
-  border-radius: @border-radius-base;
+  .border-radius(@border-radius-base);
+  white-space: nowrap;
 }
 
 
@@ -168,21 +174,18 @@ pre {
   display: block;
   padding: (@line-height-computed / 2);
   margin: 0 0 (@line-height-computed / 2);
-  font-size: 90%;
+  font-size: 100%;
   line-height: @line-height-base;
   word-break: break-all;
   word-wrap: break-word;
   color: @pre-color;
   background-color: @pre-bg;
-  border-radius: @border-radius-base;
+  .border-radius(@border-radius-base);
 
   code {
-    padding: 0;
-    font-size: inherit;
+    font-size: 100%;
     color: inherit;
     white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
   }
 }
 
@@ -193,5 +196,5 @@ kbd {
   font-size: 90%;
   color: @kbd-color;
   background-color: @kbd-bg;
-  border-radius: @border-radius-base;
+  .border-radius(@border-radius-base);
 }

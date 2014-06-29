@@ -183,6 +183,10 @@
             <p>Параграф над таблицей.</p>
             <table class="table">
               <caption>Это <code>&lt;caption&gt;</code> таблицы.</caption>
+              <col class="col-xs-1">
+              <col class="col-xs-2">
+              <col class="col-xs-2">
+              <col class="col-xs-7">
               <thead>
                 <tr>
                   <th>#</th>
@@ -208,20 +212,72 @@
                   <td>3</td>
                   <td>Ларри</td>
                   <td>Флинт</td>
-                  <td>@twitter</td>
+                  <td>@r</td>
                 </tr>
               </tbody>
             </table>
             <p>Параграф под таблицей. К.О. всегда на страже!</p>
+            <div class="table-responsive-wrp">
+              <table class="table">
+                <caption>Адаптивная таблица (требует обёрточный <code>div.table-responsive-wrp</code>)</caption>
+                <col class="col-xs-1">
+                <col class="col-xs-2">
+                <col class="col-xs-2">
+                <col class="col-xs-2">
+                <col class="col-xs-1">
+                <col class="col-xs-2">
+                <col class="col-xs-2">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Логин</th>
+                    <th>Прл</th>
+                    <th>Явка</th>
+                    <th>Денег на счету</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Ваня</td>
+                    <td>Егоров</td>
+                    <td>@evanopakas</td>
+                    <td>mdo</td>
+                    <td>Ул. Ленина</td>
+                    <td>40 000 €</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Егор</td>
+                    <td>Иванов</td>
+                    <td>@odm</td>
+                    <td>mdo</td>
+                    <td>Ул. Ленина</td>
+                    <td>40 000 €</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Ларри</td>
+                    <td>Флинт</td>
+                    <td>@r</td>
+                    <td>mdo</td>
+                    <td>Ул. Ленина</td>
+                    <td>40 000 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           
           
           <section>
             <h1>Формы и кнопки</h1>
-            <form class="row">
+            <form class="row  form">
               <fieldset class="col-xs-4">
-                <legend>Это <code>&lt;legend&gt;</code></legend>
+                <legend>Базовые типы: поля</legend>
                 <h2 class="h3">Поля HTML4</h2>
                 <div class="form__group">
                   <label class="form__label" for="fld_1">Обычное текстовое поле</label>
@@ -274,12 +330,12 @@
                   <input class="form__control" type="email" id="fld_7" placeholder="Введите email">
                   <div class="form__help-block"><code>input[type="email"]</code></div>
                 </div>
-                <div class="form__group">
+                <div class="form__group  form__group--number">
                   <label class="form__label" for="fld_8">Число</label>
                   <input class="form__control" type="number" id="fld_8" min="0" max="100" step="5" value="50">
                   <div class="form__help-block"><code>input[type="number"]</code></div>
                 </div>
-                <div class="form__group">
+                <div class="form__group  form__group--range">
                   <label class="form__label" for="fld_9">Диапазон</label>
                   <input class="form__control" type="range" id="fld_9" min="0" max="100" step="5" value="10" onchange="printValue('fld_9','fld_91')">
                   <div class="form__help-block"><code>input[type="range"]</code>. Полученное JS значение: <strong id="fld_91">10</strong></div>
@@ -322,7 +378,7 @@
                 </div>
               </fieldset>
               <fieldset class="col-xs-4">
-                <legend>Это <code>&lt;legend&gt;</code></legend>
+                <legend>Базовые типы: прочее</legend>
                 <div class="form__group  form__group--file">
                   <label class="form__label" for="fld_4">Загрузить аватар</label>
                   <input type="file" id="fld_4">
@@ -404,12 +460,53 @@
                   <div class="form__help-block"><code>select[multiple]</code></div>
                 </div>
                 <p class="h3">Кнопки</p>
+                <p>Далее — три кнопки: <code>input[type="submit"]</code>, <code>button</code> и обычный <code>a</code> — все с классом <code>.btn</code>.</p>
                 <div class="form__group  form__group--btns">
                   <input type="submit" class="btn" value="Зарегистрироваться">
-                  <input type="submit" class="btn  btn--accent" value="Не регистрироваться">
+                  <input type="submit" class="btn" value="Не регистрироваться">
+                  <input type="submit" class="btn" value="Блокирована" disabled>
                   <a class="btn" href="">Ссылка-кнопка</a>
                 </div>
+                <p class="h3">Блочные кнопки</p>
+                <div class="form__group  form__group--btns">
+                  <input type="submit" class="btn  btn--block" value="Зарегистрироваться">
+                  <input type="submit" class="btn  btn--block" value="Не регистрироваться">
+                  <a class="btn  btn--block" href="">Ссылка-кнопка</a>
+                </div>
               </fieldset>
+              <div class="col-xs-4">
+                <fieldset>
+                  <legend>Дополнения</legend>
+                  <div class="form__group">
+                    <label class="form__label" for="fld_100">Короткое текстовое поле</label>
+                    <input class="form__control  form__control--short" type="text" id="fld_100" placeholder="Короткое">
+                    <div class="form__help-block"><code>input.form__control.form__control--short</code></div>
+                  </div>
+                  <div class="form__group  form__group--has-error">
+                    <label class="form__label" for="fld_101">Ошибка заполнения поля</label>
+                    <input class="form__control" type="text" id="fld_101" placeholder="Ошибка!" value="Неправильное слово">
+                    <div class="form__help-block">Родителю добавлен модификатор <code>.form__group--has-error</code></div>
+                  </div>
+                  <div class="form__group  form__group--has-success">
+                    <label class="form__label" for="fld_102">Удача!</label>
+                    <input class="form__control" type="text" id="fld_102" placeholder="Ошибка!" value="Удачное слово">
+                    <div class="form__help-block">Родителю добавлен модификатор <code>.form__group--has-success</code></div>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="fld_104">Блокированное текстовое поле</label>
+                    <input class="form__control" type="text" id="fld_104" placeholder="Не заполнять" disabled>
+                    <div class="form__help-block"><code>input[type="text" disabled]</code></div>
+                  </div>
+                  <div class="form__group  form__group--checkbox">
+                    <label class="form__label">
+                      <input type="checkbox" disabled> 
+                      <span class="form__checkbox-text">Блокированный флажок</span>
+                    </label>
+                    <div class="form__help-block"><code>input[type="checkbox" disabled]</code></div>
+                  </div>
+                </fieldset>
+                
+              </div>
             </form>
           </section>
           

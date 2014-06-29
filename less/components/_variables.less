@@ -1,24 +1,167 @@
-@border-color:           lighten(#000, 33.5%);
+
+// nth-framework
 
 
 
-// серые
+// Цвета
+// =================================================================================================
 
-@white:                  #fff;
-@gray-0:                 #fff;
-@gray-10:                lighten(#000, 10%);
-@gray-20:                lighten(#000, 20%);
-@gray-30:                lighten(#000, 30%);
-@gray-40:                lighten(#000, 40%);
-@gray-50:                lighten(#000, 50%);
-@gray-60:                lighten(#000, 60%);
-@gray-70:                lighten(#000, 70%);
-@gray-80:                lighten(#000, 80%);
-@gray-90:                lighten(#000, 90%);
-@gray-100:               #000;
-@black:                  #000;
+  // Cерые
+
+  @white:                  #fff;
+  @gray-0:                 @white; // Только для логичности
+  @gray-5:                 lighten(#000, 95%);
+  @gray-10:                lighten(#000, 90%);
+  @gray-20:                lighten(#000, 80%);
+  @gray-30:                lighten(#000, 70%);
+  @gray-40:                lighten(#000, 60%);
+  @gray-50:                lighten(#000, 50%);
+  @gray-60:                lighten(#000, 40%);
+  @gray-70:                lighten(#000, 30%);
+  @gray-80:                lighten(#000, 20%);
+  @gray-90:                lighten(#000, 10%);
+  @gray-100:               @black; // Только для логичности
+  @black:                  #000;
+  
+  
+  // Успех, подтверждение (обычно, зеленый)
+  
+  @success:                #00B300;
+  @success-border:         desaturate(lighten(@success, 30%), 60%);
+  @success-bg:             desaturate(lighten(@success, 60%), 60%);
+  
+  
+  // Опасность, ошибка (обычно, красный)
+  
+  @danger:                 #E00000;
+  @danger-border:          desaturate(lighten(@danger, 30%), 20%);
+  @danger-bg:              desaturate(lighten(@danger, 50%), 20%);
 
 
+  // Базовый серый цвет
+  
+  @gray:                   @gray-50;
+  @border-color-base:      @gray-30;
+  @bg-gray-base:           @gray-5;
+
+  // Строительные леса
+
+  @body-bg:                @white;
+  @text-color:             @gray-80;
+
+  @link-color:             #428bca;
+  @link-color--hover:      darken(@link-color, 15%);
+
+
+
+// Общие параметры
+// =================================================================================================
+  
+  @border-radius-base:        2px;
+  
+  @padding-base-vertical:     6px;
+  @padding-base-horizontal:   8px;
+  
+
+  
+// Размеры текста, интерлиньяж
+// =================================================================================================
+
+  @font-family-sans-serif:  Helvetica, Arial, sans-serif;
+  @font-family-serif:       Georgia, "Times New Roman", Times, serif;
+  @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+  
+  @font-family-base:        @font-family-sans-serif;
+
+  @font-size-base:          14px;
+  @font-size-large:         @font-size-base + 4px;
+  @font-size-small:         @font-size-base - 4px;
+  @font-size-h1:            floor((@font-size-base * 2.15));
+  @font-size-h2:            floor((@font-size-base * 1.7));
+  @font-size-h3:            ceil( (@font-size-base * 1.35));
+  @font-size-h4:            ceil( (@font-size-base * 1.2));
+  @font-size-h5:            @font-size-base;
+  @font-size-h6:            @font-size-base;
+
+  @line-height-base:        1.4; // 20/14
+  @line-height-computed:    floor((@font-size-base * @line-height-base)); // то же, но в пикселях
+
+  @headings-font-family:    inherit;
+  @headings-font-weight:    500;
+  @headings-line-height:    1.1;
+  @headings-color:          inherit;
+
+
+
+// Таблицы
+// =================================================================================================
+
+  @table-cell-padding:      @padding-base-horizontal;
+  @table-bg:                transparent;
+  @table-border-color:      @border-color-base;
+
+
+
+// Формы
+// =================================================================================================
+
+  @input-bg:                     @white;
+  @input-color:                  @text-color;           // базовый цвет текста
+  
+  @input-border-color:           @border-color-base;    // базовый цвет бордюра
+  @input-border-radius:          @border-radius-base;   // базовый радиус углов бордюра
+  @input-border-color--focus:    @gray-100;
+  
+  @input-height-base:            (@line-height-computed + (@padding-base-vertical * 2) + 2);
+  
+  @input-bg--disabled:           @bg-gray-base;
+  @input-color--disabled:        @gray;
+  @input-border-color--disabled: @border-color-base;
+
+
+
+// Кнопки
+// =================================================================================================
+
+
+  @btn-bg:                       @bg-gray-base;
+  @btn-color:                    @text-color;
+
+  @btn-border-color:             @border-color-base;
+  @btn-border-radius:            @input-border-radius;
+  @btn-font-weight:              normal;
+  
+  @btn-height-base:              @input-height-base;
+
+  @btn-bg--disabled:             lighten(@bg-gray-base, 2%);
+  @btn-color--disabled:          lighten(@text-color, 50%);
+  @btn-border-color--disabled:   lighten(@border-color-base, 10%);
+
+
+// Форматированный текст
+// =================================================================================================
+
+  @code-color:                   @gray-80;
+  @code-bg:                      @bg-gray-base;
+
+  @kbd-color:                    @gray-0;
+  @kbd-bg:                       @gray-80;
+
+  @pre-bg:                       @bg-gray-base;
+  @pre-color:                    @gray-80;
+  @pre-border-color:             @border-color-base;
+
+
+
+
+
+
+
+
+
+
+
+  
 //
 // Variables
 // --------------------------------------------------
@@ -30,7 +173,7 @@
 
 @gray-darker:            lighten(#000, 13.5%); // #222
 @gray-dark:              lighten(#000, 20%);   // #333
-@gray:                   lighten(#000, 33.5%); // #555
+//@gray:                   lighten(#000, 33.5%); // #555
 @gray-light:             lighten(#000, 46.7%); // #777
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
@@ -46,47 +189,18 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
-//** Global text color on `<body>`.
-@text-color:            @gray-dark;
 
-//** Global textual link color.
-@link-color:            @brand-primary;
-//** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+//** Global text color on `<body>`.
+
+
+
 
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
-@font-size-large:         ceil((@font-size-base * 1.25));
-@font-size-small:         ceil((@font-size-base * 0.85));
-
-@font-size-h1:            floor((@font-size-base * 2.15));
-@font-size-h2:            floor((@font-size-base * 1.7));
-@font-size-h3:            ceil((@font-size-base * 1.35));
-@font-size-h4:            ceil((@font-size-base * 1.2));
-@font-size-h5:            @font-size-base;
-@font-size-h6:            @font-size-base;
-
-//** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.428571429; // 20/14
-//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
-
-//** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
-@headings-font-weight:    500;
-@headings-line-height:    1.1;
-@headings-color:          inherit;
 
 
 //== Iconography
@@ -105,8 +219,7 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+
 
 @padding-large-vertical:    10px;
 @padding-large-horizontal:  16px;
@@ -120,7 +233,7 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        2px;
+
 @border-radius-large:       6px;
 @border-radius-small:       3px;
 
@@ -140,53 +253,14 @@
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
 //** Padding for `<th>`s and `<td>`s.
-@table-cell-padding:            8px;
-//** Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:  5px;
 
-//** Default background color used for all tables.
-@table-bg:                      transparent;
-//** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
-//** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
-@table-bg-active:               @table-bg-hover;
-
-//** Border color for table and cell borders.
-@table-border-color:            #ddd;
 
 
 //== Buttons
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
-
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
-
-@btn-success-color:              #fff;
-@btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
-
-@btn-info-color:                 #fff;
-@btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
-
-@btn-warning-color:              #fff;
-@btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
-
-@btn-danger-color:               #fff;
-@btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
-
-@btn-link-disabled-color:        @gray-light;
 
 
 //== Forms
@@ -452,7 +526,7 @@
 @pagination-bg:                        #fff;
 @pagination-border:                    #ddd;
 
-@pagination-hover-color:               @link-hover-color;
+//@pagination-hover-color:               @link-hover-color;
 @pagination-hover-bg:                  @gray-lighter;
 @pagination-hover-border:              #ddd;
 
@@ -823,20 +897,7 @@
 @close-text-shadow:           0 1px 0 #fff;
 
 
-//== Code
-//
-//##
 
-@code-color:                  #c7254e;
-@code-bg:                     #f9f2f4;
-
-@kbd-color:                   #fff;
-@kbd-bg:                      #333;
-
-@pre-bg:                      #f5f5f5;
-@pre-color:                   @gray-dark;
-@pre-border-color:            #ccc;
-@pre-scrollable-max-height:   340px;
 
 
 //== Type
