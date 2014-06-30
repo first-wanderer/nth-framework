@@ -53,24 +53,55 @@ img {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  line-height: @headings-line-height;
-  color: @headings-color;
-  margin-top: @line-height-base;
-  margin-bottom: (@line-height-base / 2);
 }
 
-h1, .h1 { font-size: @font-size-h1; }
-h2, .h2 { font-size: @font-size-h2; }
-h3, .h3 { font-size: @font-size-h3; }
-h4, .h4 { font-size: @font-size-h4; }
-h5, .h5 { font-size: @font-size-h5; }
-h6, .h6 { font-size: @font-size-h6; }
+
+h1, .h1 {
+  font-size: @font-size-h1;
+  .calculation-indentation(@font-size-h1);
+  color: @font-color-h1;
+  font-weight: @font-weight-h1;
+}
+
+h2, .h2 {
+  font-size: @font-size-h2;
+  .calculation-indentation(@font-size-h2);
+  color: @font-color-h2;
+  font-weight: @font-weight-h2;
+}
+
+h3, .h3 {
+  font-size: @font-size-h3;
+  .calculation-indentation(@font-size-h3);
+  color: @font-color-h3;
+  font-weight: @font-weight-h3;
+}
+
+h4, .h4 {
+  font-size: @font-size-h4;
+  .calculation-indentation(@font-size-h4);
+  color: @font-color-h4;
+  font-weight: @font-weight-h4;
+}
+
+h5, .h5 {
+  font-size: @font-size-h5;
+  .calculation-indentation(@font-size-h5);
+  color: @font-color-h5;
+  font-weight: @font-weight-h5;
+}
+
+h6, .h6 {
+  font-size: @font-size-h6;
+  .calculation-indentation(@font-size-h6);
+  color: @font-color-h6;
+  font-weight: @font-weight-h6;
+}
 
 
 
 p {
-  margin: 0 0 (@line-height-base / 2);
+  margin: 0 0 @vertical-rhythm-step;
 }
 
 
@@ -78,7 +109,7 @@ p {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: (@line-height-base / 2);
+  margin-bottom: @vertical-rhythm-step;
   
   ul,
   ol {
@@ -103,8 +134,8 @@ abbr[title] {
 
 
 blockquote {
-  padding: (@line-height-base / 2) @line-height-base;
-  margin: 0 0 @line-height-base;
+  padding: (@vertical-rhythm-step / 2) @vertical-rhythm-step;
+  margin: 0 0 @vertical-rhythm-step;
   .font-size(@font-size-base);
   
   p,
@@ -131,8 +162,8 @@ blockquote {
 
 
 hr {
-  margin-top:    @line-height-base;
-  margin-bottom: @line-height-base;
+  margin-top:    @vertical-rhythm-step;
+  margin-bottom: @vertical-rhythm-step;
   border: 0;
   border-top: 1px solid @border-color-base;
 }
@@ -140,7 +171,7 @@ hr {
 
 
 address {
-  margin-bottom: @line-height-base;
+  margin-bottom: @vertical-rhythm-step;
   font-style: normal;
   line-height: @line-height-base;
 }
@@ -173,8 +204,8 @@ code {
 
 pre {
   display: block;
-  padding: (@line-height-base / 2);
-  margin: 0 0 (@line-height-base / 2);
+  padding: (@vertical-rhythm-step / 2);
+  margin: 0 0 @vertical-rhythm-step;
   
   // font-size: 90%; // указано в нормализаторе
   line-height: @line-height-base;

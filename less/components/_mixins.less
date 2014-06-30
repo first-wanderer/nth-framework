@@ -21,6 +21,31 @@
 
 
 
+// Подсчёт необходимой типографической высоты линии и внешних отступов
+
+.calculation-indentation(@font-size-rem) {
+  & when (@font-size-rem >= 4) {
+    // Невменяемо большой размер шрифта
+    line-height: @vertical-rhythm-step * 3; 
+    margin-top: @vertical-rhythm-step * 2;
+    margin-bottom: @vertical-rhythm-step; 
+  }
+  & when (@font-size-rem < 4) and (@font-size-rem > 1.6) {
+    // Вменяемо большой размер шрифта
+    line-height: @vertical-rhythm-step * 2; 
+    margin-top: @vertical-rhythm-step * 2;
+    margin-bottom: @vertical-rhythm-step; 
+  }
+  & when (@font-size-rem <= 1.6) {
+    // Маленький размер
+    line-height: @vertical-rhythm-step; 
+    margin-top: (@vertical-rhythm-step + .5);
+    margin-bottom: (@vertical-rhythm-step - .5); 
+  }
+}
+
+
+
 
 // Mixins
 // --------------------------------------------------

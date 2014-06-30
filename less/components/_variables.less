@@ -6,22 +6,13 @@
 // Цвета
 // =================================================================================================
 
-  // Cерые
+  // Главные цвета страницы
+  
+  @body-bg:                @white;
+  @text-color:             @gray-80;
 
-  @white:                  #fff;
-  @gray-0:                 @white; // Только для логичности
-  @gray-5:                 lighten(#000, 95%);
-  @gray-10:                lighten(#000, 90%);
-  @gray-20:                lighten(#000, 80%);
-  @gray-30:                lighten(#000, 70%);
-  @gray-40:                lighten(#000, 60%);
-  @gray-50:                lighten(#000, 50%);
-  @gray-60:                lighten(#000, 40%);
-  @gray-70:                lighten(#000, 30%);
-  @gray-80:                lighten(#000, 20%);
-  @gray-90:                lighten(#000, 10%);
-  @gray-100:               @black; // Только для логичности
-  @black:                  #000;
+  @link-color:             #428bca;
+  @link-color--hover:      darken(@link-color, 15%);
   
   
   // Успех, подтверждение (обычно, зеленый)
@@ -29,8 +20,8 @@
   @success:                #00B300;
   @success-border:         desaturate(lighten(@success, 30%), 60%);
   @success-bg:             desaturate(lighten(@success, 60%), 60%);
-  
-  
+
+
   // Опасность, ошибка (обычно, красный)
   
   @danger:                 #E00000;
@@ -40,62 +31,61 @@
 
   // Базовый серый цвет
   
-  @gray:                   @gray-50;
-  @border-color-base:      @gray-30;
-  @bg-gray-base:           @gray-5;
-
-  // Строительные леса
-
-  @body-bg:                @white;
-  @text-color:             @gray-80;
-
-  @link-color:             #428bca;
-  @link-color--hover:      darken(@link-color, 15%);
+  @gray:                   @gray-50;    // Второстепенный текст
+  @border-color-base:      @gray-30;    // Все бордюры
+  @bg-gray-base:           @gray-5;     // Серый фоновый (<code>, <pre>...)
 
 
 
-// Общие параметры
-// =================================================================================================
-  
-  @border-radius-base:        2px;
-  
-  @padding-base-vertical:     (@font-size-base / 2);
-  @padding-base-horizontal:   (@font-size-base / 2) + .1;
-  
-  @transition-time-base:      .15s;
-  
-
-  
-// Размеры текста, интерлиньяж
+// Текст
 // =================================================================================================
 
   @font-family-sans-serif:  Helvetica, Arial, sans-serif;
   @font-family-serif:       Georgia, "Times New Roman", Times, serif;
   @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
   
+  // Шрифты
+  
   @font-family-base:        @font-family-sans-serif;
+  @headings-font-family:    @font-family-sans-serif;
 
   @font-size-root:          10px;
-  @font-size-base:          1.4rem;
   
-  // Практиковать подход http://css-tricks.com/rems-ems/
+  
+  // Размер, базовый интерлиньяж, цвета заголовков
+
+  @font-size-base-px:       14px;
+  @line-height-base:        1.4285714em; // Калькулятор — http://riddle.pl/emcalc/
+  
+  @font-size-h1-px:         24px;
+  @font-color-h1:           inherit;
+  @font-weight-h1:          400;
+  
+  @font-size-h2-px:         18px;
+  @font-color-h2:           inherit;
+  @font-weight-h2:          400;
+  
+  @font-size-h3-px:         16px;
+  @font-color-h3:           inherit;
+  @font-weight-h3:          700;
+  
+  @font-size-h4-px:         14px;
+  @font-color-h4:           inherit;
+  @font-weight-h4:          700;
+  
+  @font-size-h5-px:         14px;
+  @font-color-h5:           inherit;
+  @font-weight-h5:          700;
+  
+  @font-size-h6-px:         14px;
+  @font-color-h6:           inherit;
+  @font-weight-h6:          700;
+  
+  
+  // Родитель-зависимые размеры (em)
   
   @font-size-large:         .85em;
   @font-size-small:         1.15em;
-  
-  @font-size-h1:            2.15em;
-  @font-size-h2:            1.7em;
-  @font-size-h3:            1.35em;
-  @font-size-h4:            1.2em;
-  @font-size-h5:            1em;
-  @font-size-h6:            1em;
-
-  @line-height-base:        1.4em;
-
-  @headings-font-family:    inherit;
-  @headings-font-weight:    500;
-  @headings-line-height:    1.1;
-  @headings-color:          inherit;
 
 
 
@@ -112,14 +102,12 @@
 // =================================================================================================
 
   @input-bg:                     @white;
-  @input-color:                  @text-color;           // базовый цвет текста
-  
-  @input-border-color:           @border-color-base;    // базовый цвет бордюра
-  @input-border-radius:          @border-radius-base;   // базовый радиус углов бордюра
+  @input-color:                  @text-color;
+
+  @input-border-color:           @border-color-base;
+  @input-border-radius:          @border-radius-base;
   @input-border-color--focus:    @gray-100;
-  
-  // @input-height-base:            (@line-height-computed + (@padding-base-vertical * 2) + 2);
-  
+
   @input-bg--disabled:           @bg-gray-base;
   @input-color--disabled:        @gray;
   @input-border-color--disabled: @border-color-base;
@@ -136,8 +124,7 @@
   @btn-border-color:             @border-color-base;
   @btn-border-radius:            @input-border-radius;
   @btn-font-weight:              normal;
-  
-  // @btn-height-base:              @input-height-base;
+
 
   @btn-bg--hover:                darken(@bg-gray-base, 2%);
   @btn-color--hover:             darken(@text-color, 30%);
@@ -146,6 +133,7 @@
   @btn-bg--disabled:             lighten(@bg-gray-base, 2%);
   @btn-color--disabled:          lighten(@text-color, 50%);
   @btn-border-color--disabled:   lighten(@border-color-base, 10%);
+
 
 
 // Форматированный текст
@@ -163,6 +151,28 @@
 
 
 
+// Общие параметры
+// =================================================================================================
+  
+  // Базовое сглаживание углов (кнопки, поля ввода...)
+  
+  @border-radius-base:        2px;
+  
+  
+  // Базовые внутренние отступы (ячейки таблицы, кнопки, поля ввода...)
+  
+  @padding-base-vertical:     (@vertical-rhythm-step / 4);
+  @padding-base-horizontal:   (@vertical-rhythm-step / 4) + .1;
+  
+  
+  // Базовое время «переходов» (наведения на кнопки, получение фокуса полями ввода...)
+  
+  @transition-time-base:      .15s;
+  
+  
+  // Единица вертикального ритма (вертикальные отступы в типографике, базовые внутренние отступы...)
+  
+  @vertical-rhythm-step:      round( unit(@font-size-base * @line-height-base, rem) ); // интерлиньяж в rem-ах
 
 
 
@@ -173,6 +183,47 @@
 
 
 
+
+
+// Служебное. Крайне редко нуждается в изменении
+// =================================================================================================
+
+  // Серые цвета
+
+  @white:                  #fff;
+  @gray-0:                 @white; // Только для логичности
+  @gray-5:                 lighten(@black, 95%);
+  @gray-10:                lighten(@black, 90%);
+  @gray-20:                lighten(@black, 80%);
+  @gray-30:                lighten(@black, 70%);
+  @gray-40:                lighten(@black, 60%);
+  @gray-50:                lighten(@black, 50%);
+  @gray-60:                lighten(@black, 40%);
+  @gray-70:                lighten(@black, 30%);
+  @gray-80:                lighten(@black, 20%);
+  @gray-90:                lighten(@black, 10%);
+  @gray-100:               @black; // Только для логичности
+  @black:                  #000;
+
+  
+  // Подсчёт размеров шрифтов в rem
+
+  @font-size-base:          unit(@font-size-base-px / @font-size-root, rem);
+  @font-size-h1:            unit(@font-size-h1-px / @font-size-root, rem);
+  @font-size-h2:            unit(@font-size-h2-px / @font-size-root, rem);
+  @font-size-h3:            unit(@font-size-h3-px / @font-size-root, rem);
+  @font-size-h4:            unit(@font-size-h4-px / @font-size-root, rem);
+  @font-size-h5:            unit(@font-size-h5-px / @font-size-root, rem);
+  @font-size-h6:            unit(@font-size-h6-px / @font-size-root, rem);
+
+
+
+  
+  
+  
+  
+  
+  
 
 
 
