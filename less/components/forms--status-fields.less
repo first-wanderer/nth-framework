@@ -1,0 +1,40 @@
+.form {
+  
+  &__group {
+      
+    // «При заполнении возникла ошибка»
+    // =============================================================================================
+    
+    &--has-error {
+      
+      .form__label,
+      .form__help-block  {
+        color: @danger;
+      }
+      
+      .form__control {
+        color: @danger;
+        border-color: @danger-border;
+        background-color: @danger-bg;
+      }
+    }
+    
+    
+    // «Успешное заполнение»
+    // =============================================================================================
+    
+    &--has-success {
+      
+      .form__label,
+      .form__help-block {
+        color: @success;
+      }
+      
+      .form__control {
+        color: @success;
+        border-color: @success-border;
+        background-color: @success-bg;
+      }
+    }
+  }
+}

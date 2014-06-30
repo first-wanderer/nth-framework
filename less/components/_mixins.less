@@ -3,7 +3,7 @@
 
 
 
-// Сглаженные углы: пишем правило только если передано значение сглаживания более нуля
+// Сглаженные углы: пишем правило только если передано значение сглаживания больше нуля
 
 .border-radius (@radius: 0) when (@radius > 1) {
   border-radius: @radius;
@@ -21,28 +21,54 @@
 
 
 
-// Подсчёт необходимой типографической высоты линии и внешних отступов
+// Подсчёт необходимой типографической высоты линии и внешних отступов (заголовков)
 
 .calculation-indentation(@font-size-rem) {
-  & when (@font-size-rem >= 4) {
-    // Невменяемо большой размер шрифта
-    line-height: @vertical-rhythm-step * 3; 
-    margin-top: @vertical-rhythm-step * 2;
-    margin-bottom: @vertical-rhythm-step; 
-  }
-  & when (@font-size-rem < 4) and (@font-size-rem > 1.6) {
-    // Вменяемо большой размер шрифта
+  
+  
+  // высота строки
+  
+  & when (@font-size-rem >= 2) {
     line-height: @vertical-rhythm-step * 2; 
-    margin-top: @vertical-rhythm-step * 2;
-    margin-bottom: @vertical-rhythm-step; 
   }
-  & when (@font-size-rem <= 1.6) {
-    // Маленький размер
+  
+  & when (@font-size-rem < 2) {
     line-height: @vertical-rhythm-step; 
-    margin-top: (@vertical-rhythm-step + .5);
-    margin-bottom: (@vertical-rhythm-step - .5); 
+  }
+  
+  
+  // верхний отступ
+  
+  & when (@font-size-rem >= 3) {
+    margin-top: @vertical-rhythm-step * 2;
+  }
+  
+  & when (@font-size-rem < 3) {
+    margin-top: @vertical-rhythm-step;
+  }
+  
+  // нижний отступ
+  
+  & when (@font-size-rem >= 1.5) {
+    margin-bottom: @vertical-rhythm-step;
+    top: .3em;
+  }
+  
+  & when (@font-size-rem < 1.5) {
+    margin-bottom: 0; 
   }
 }
+
+
+
+// Прячем маркеры у списков и убираем левый внутренний отступ
+
+.list-unstyled() {
+  padding-left: 0;
+  list-style: none;
+}
+
+
 
 
 

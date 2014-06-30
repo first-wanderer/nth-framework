@@ -1,0 +1,50 @@
+
+// nth-framework
+
+
+
+@media (max-width: @screen-sm-min) {
+  
+  .table-responsive-wrp {
+    width: 100%;
+    padding-top: (@vertical-rhythm-step / 2);
+    margin-bottom: (@vertical-rhythm-step / 2);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid @table-border-color;
+    -webkit-overflow-scrolling: touch;
+    
+    caption {
+      padding: 0 (@vertical-rhythm-step / 2);
+    }
+    
+    table {
+      border-right: 0;
+      border-bottom: 0;
+      margin-bottom: 0;
+      
+      th,
+      td {
+        white-space: nowrap;
+      }
+      
+      th:first-child,
+      td:first-child {
+        border-left: 0;
+      }
+      
+      th:last-child,
+      td:last-child {
+        border-right: 0;
+      }
+      
+      tr:last-child {
+        th,
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}

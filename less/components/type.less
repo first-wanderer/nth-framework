@@ -50,9 +50,13 @@ img {
 
 
 
+// Заголовки, параграфы, списки
+// =================================================================================================
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @headings-font-family;
+  position: relative;
 }
 
 
@@ -108,6 +112,7 @@ p {
 
 ul,
 ol {
+  padding-left: @vertical-rhythm-step * 1.5;
   margin-top: 0;
   margin-bottom: @vertical-rhythm-step;
   
@@ -119,9 +124,18 @@ ol {
 
 
 
+// Прочее
+// =================================================================================================
+
 small,
 .small {
   font-size: @font-size-small; 
+}
+
+
+
+em {
+  font-weight: 700;
 }
 
 
@@ -134,7 +148,7 @@ abbr[title] {
 
 
 blockquote {
-  padding: (@vertical-rhythm-step / 2) @vertical-rhythm-step;
+  padding: 0 0 0 (@vertical-rhythm-step * 1.5);
   margin: 0 0 @vertical-rhythm-step;
   .font-size(@font-size-base);
   
@@ -149,7 +163,7 @@ blockquote {
   footer {
     display: block;
     font-size: @font-size-small;
-    line-height: @line-height-base;
+    line-height: @vertical-rhythm-step;
     color: @gray;
     text-align: right;
 
@@ -204,7 +218,7 @@ code {
 
 pre {
   display: block;
-  padding: (@vertical-rhythm-step / 2);
+  padding: (@vertical-rhythm-step / 2) @vertical-rhythm-step;
   margin: 0 0 @vertical-rhythm-step;
   
   // font-size: 90%; // указано в нормализаторе

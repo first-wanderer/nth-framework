@@ -1,0 +1,45 @@
+
+// nth-framework
+
+
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @vertical-rhythm-step;
+  border: 1px solid @table-border-color;
+  background-color: @table-bg;
+  
+  caption {
+    text-align: left;
+    font-size: @font-size-base;
+    font-weight: 700;
+    margin-bottom: (@vertical-rhythm-step / 2);
+  }
+  
+  th,
+  td {
+    padding: @table-cell-padding;
+    line-height: @line-height-base;
+    vertical-align: top;
+    border: 1px solid @table-border-color;
+    text-align: left;
+    
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9/10
+      float: none;
+      display: table-cell;
+    }
+  }
+  
+  thead th {
+    vertical-align: bottom;
+  }
+  
+  col[class*="col-"] {
+    position: static; // Prevent border hiding in Firefox and IE9/10
+    float: none;
+    display: table-column;
+  }
+  
+}

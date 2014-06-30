@@ -5,6 +5,6 @@
 
 body {
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 95%,rgba(0,0,0,.2) 100%);
-  background-size: 1px (@vertical-rhythm-step * @font-size-root);
-  background-position: 0 18px;
+  background-size: 1px @vertical-rhythm-step;
+  background-position: 0 ((@font-size-base - @vertical-rhythm-step) / 2);
 }

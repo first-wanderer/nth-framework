@@ -1,16 +1,12 @@
-//
-// Buttons
-// --------------------------------------------------
+
+// nth-framework
 
 
-// Base styles
-// --------------------------------------------------
 
 .btn {
   display: inline-block;
   vertical-align: middle;
-  // height: @btn-height-base;
-  padding: @padding-base-vertical @padding-base-horizontal;
+  padding: @padding-base-vertical (@padding-base-horizontal * 2);
   line-height: @line-height-base;
   
   margin-bottom: 0; // For input.btn
@@ -22,7 +18,7 @@
   text-align: center;
   text-decoration: none;
 
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  background-image: none; // Reset unusual Firefox-on-Android default style
   background-color: @btn-bg;
   white-space: nowrap;
   cursor: pointer;
@@ -71,10 +67,6 @@
     input[type="reset"]&,
     input[type="button"]& {
       width: 100%;
-    }
-    
-    & + & {
-      margin-top: (@line-height-base / 2);
     }
   }
 }

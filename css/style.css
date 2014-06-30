@@ -208,6 +208,12 @@ th {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+.mt0 {
+  margin-top: 0;
+}
+.mb0 {
+  margin-bottom: 0;
+}
 html {
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -216,7 +222,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1.4285714em;
+  line-height: 1.4285714;
   color: #333333;
   background-color: #ffffff;
 }
@@ -249,68 +255,73 @@ h6,
 .h5,
 .h6 {
   font-family: Helvetica, Arial, sans-serif;
+  position: relative;
 }
 h1,
 .h1 {
-  font-size: 2.4rem;
-  line-height: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  font-size: 3.6rem;
+  line-height: 3.99999992rem;
+  margin-top: 3.99999992rem;
+  margin-bottom: 1.99999996rem;
+  top: .3em;
   color: inherit;
   font-weight: 400;
 }
 h2,
 .h2 {
-  font-size: 1.8rem;
-  line-height: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  line-height: 3.99999992rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 1.99999996rem;
+  top: .3em;
   color: inherit;
   font-weight: 400;
 }
 h3,
 .h3 {
-  font-size: 1.6rem;
-  line-height: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 3.99999992rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 1.99999996rem;
+  top: .3em;
   color: inherit;
-  font-weight: 700;
+  font-weight: 400;
 }
 h4,
 .h4 {
   font-size: 1.4rem;
-  line-height: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.99999996rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 0;
   color: inherit;
   font-weight: 700;
 }
 h5,
 .h5 {
   font-size: 1.4rem;
-  line-height: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.99999996rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 0;
   color: inherit;
   font-weight: 700;
 }
 h6,
 .h6 {
   font-size: 1.4rem;
-  line-height: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.99999996rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 0;
   color: inherit;
   font-weight: 700;
 }
 p {
-  margin: 0 0 2rem;
+  margin: 0 0 1.99999996rem;
 }
 ul,
 ol {
+  padding-left: 2.99999994rem;
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.99999996rem;
 }
 ul ul,
 ol ul,
@@ -320,15 +331,18 @@ ol ol {
 }
 small,
 .small {
-  font-size: 1.15em;
+  font-size: 0.85em;
+}
+em {
+  font-weight: 700;
 }
 abbr[title] {
   cursor: help;
   border-bottom: 1px dotted #333333;
 }
 blockquote {
-  padding: 1rem 2rem;
-  margin: 0 0 2rem;
+  padding: 0 0 0 2.99999994rem;
+  margin: 0 0 1.99999996rem;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -339,8 +353,8 @@ blockquote ol:last-child {
 }
 blockquote footer {
   display: block;
-  font-size: 1.15em;
-  line-height: 1.4285714em;
+  font-size: 0.85em;
+  line-height: 1.99999996rem;
   color: #808080;
   text-align: right;
 }
@@ -348,15 +362,15 @@ blockquote footer:before {
   content: '\2014 \00A0';
 }
 hr {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 1.99999996rem;
   border: 0;
   border-top: 1px solid #b3b3b3;
 }
 address {
-  margin-bottom: 2rem;
+  margin-bottom: 1.99999996rem;
   font-style: normal;
-  line-height: 1.4285714em;
+  line-height: 1.4285714;
 }
 code,
 kbd,
@@ -373,9 +387,9 @@ code {
 }
 pre {
   display: block;
-  padding: 1rem;
-  margin: 0 0 2rem;
-  line-height: 1.4285714em;
+  padding: 0.99999998rem 1.99999996rem;
+  margin: 0 0 1.99999996rem;
+  line-height: 1.4285714;
   color: #333333;
   background-color: #f2f2f2;
   word-break: break-all;
@@ -396,7 +410,7 @@ kbd {
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 0.7142857em;
+  margin-bottom: 1.99999996rem;
   border: 1px solid #b3b3b3;
   background-color: transparent;
 }
@@ -404,12 +418,12 @@ table caption {
   text-align: left;
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 0.7142857em;
+  margin-bottom: 0.99999998rem;
 }
 table th,
 table td {
-  padding: 0.6rem;
-  line-height: 1.4285714em;
+  padding: 0.49999999rem 0.69999999rem;
+  line-height: 1.4285714;
   vertical-align: top;
   border: 1px solid #b3b3b3;
   text-align: left;
@@ -431,8 +445,8 @@ table col[class*="col-"] {
 @media (max-width: 768px) {
   .table-responsive-wrp {
     width: 100%;
-    padding-top: 0.7142857em;
-    margin-bottom: 0.7142857em;
+    padding-top: 0.99999998rem;
+    margin-bottom: 0.99999998rem;
     overflow-y: hidden;
     overflow-x: scroll;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -440,7 +454,7 @@ table col[class*="col-"] {
     -webkit-overflow-scrolling: touch;
   }
   .table-responsive-wrp caption {
-    padding: 0 0.7142857em;
+    padding: 0 0.99999998rem;
   }
   .table-responsive-wrp table {
     border-right: 0;
@@ -475,10 +489,12 @@ legend {
   width: 100%;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.8rem;
-  line-height: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  position: relative;
+  font-size: 2.4rem;
+  line-height: 3.99999992rem;
+  margin-top: 1.99999996rem;
+  margin-bottom: 1.99999996rem;
+  top: .3em;
   color: inherit;
   font-weight: 400;
 }
@@ -518,8 +534,8 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  line-height: 1.4285714em;
-  line-height: 1.4285714em \0;
+  line-height: 1.4285714;
+  line-height: 1.4285714 \0;
 }
 input[type="color"] {
   padding: 0;
@@ -529,20 +545,20 @@ input[type="color"] {
 .form__control {
   display: block;
   width: 100%;
-  padding: 0.5rem 0.6rem;
+  padding: 0.49999999rem 0.69999999rem;
   border: 1px solid #b3b3b3;
   border-radius: 2px;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1.4285714em;
+  line-height: 1.4285714;
   color: #333333;
   background-color: #ffffff;
   background-image: none;
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: 0;
-  -webkit-transition: all 0.15s linear;
-  transition: all 0.15s linear;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 .form__control::-moz-placeholder {
   color: #808080;
@@ -575,20 +591,32 @@ textarea.form__control {
 }
 .form__label {
   display: inline-block;
-  margin-bottom: 0.7142857em;
+  margin-bottom: 0.66666665rem;
   font-weight: normal;
 }
+.form__help-block {
+  margin-top: 0.5rem;
+  font-size: 0.85em;
+  color: #808080;
+}
 .form__group {
-  margin-bottom: 1.4285714em;
+  margin-bottom: 1.99999996rem;
   position: relative;
 }
 .form__group--range .form__control {
   border: 0;
   padding: 0;
 }
+.form__group--btns {
+  margin-bottom: 0;
+}
+.form__group--btns .btn {
+  margin-bottom: 1.99999996rem;
+  margin-right: 1.99999996rem;
+}
 .form__group--checkbox .form__label {
   position: relative;
-  padding-left: 25px;
+  padding-left: 2rem;
   margin-bottom: 0;
 }
 .form__group--checkbox input[type="checkbox"] {
@@ -596,16 +624,25 @@ textarea.form__control {
   top: .2em;
   left: 0;
 }
+.form__group--checkbox .form__help-block {
+  padding-left: 2rem;
+}
 .form__group--radio .form__label {
   position: relative;
-  padding-left: 25px;
+  padding-left: 2rem;
   margin-bottom: 0;
-  cursor: pointer;
 }
 .form__group--radio input[type="radio"] {
   position: absolute;
   top: .2em;
   left: 0;
+}
+.form__group--radio .form__help-block {
+  padding-left: 2rem;
+}
+.form__group--checkbox + .form__group--checkbox,
+.form__group--radio + .form__group--radio {
+  margin-top: -0.99999998rem;
 }
 .form__group--checkbox-custom input[type="checkbox"] + .form__checkbox-text::before,
 .form__group--radio-custom input[type="checkbox"] + .form__checkbox-text::before {
@@ -635,10 +672,6 @@ textarea.form__control {
 .form__group--radio-custom input[type="radio"]:checked + .form__radio-text::before {
   content: 'on';
 }
-.form__group--checkbox + .form__group--checkbox,
-.form__group--radio + .form__group--radio {
-  margin-top: -0.7142857em;
-}
 .form__group--has-error .form__label,
 .form__group--has-error .form__help-block {
   color: #e00000;
@@ -660,8 +693,8 @@ textarea.form__control {
 .btn {
   display: inline-block;
   vertical-align: middle;
-  padding: 0.5rem 0.6rem;
-  line-height: 1.4285714em;
+  padding: 0.49999999rem 1.39999998rem;
+  line-height: 1.4285714;
   margin-bottom: 0;
   border: 1px solid #b3b3b3;
   border-radius: 2px;
@@ -713,9 +746,6 @@ input[type="submit"].btn--block,
 input[type="reset"].btn--block,
 input[type="button"].btn--block {
   width: 100%;
-}
-.btn--block + .btn--block {
-  margin-top: 0.7142857em;
 }
 .container {
   margin-right: auto;
@@ -1384,13 +1414,72 @@ input[type="button"].btn--block {
     margin-left: 0%;
   }
 }
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
-  -webkit-background-size: 1px 20px;
-  background-size: 1px 20px;
-  background-position: 0 18px;
+.tooltip {
+  position: relative;
+}
+.tooltip:before {
+  content: '?';
+  display: inline-block;
+  margin-left: .3em;
+  width: 1.79999996rem;
+  height: 1.79999996rem;
+  line-height: 1.79999996rem;
+  border-radius: 50%;
+  border: 1px solid #b3b3b3;
+  text-align: center;
+  color: #b3b3b3;
+  cursor: default;
+}
+.tooltip__hide {
+  display: none;
+}
+.tooltip__text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 20em;
+  padding: 0.99999998rem;
+  margin-top: 10px;
+  margin-left: .2em;
+  border-radius: 2px;
+  border: 1px solid #b3b3b3;
+  background-color: #ffffff;
+  font-size: 0.85em;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+.tooltip__text:before,
+.tooltip__text:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 0.99999998rem;
+  border-style: solid;
+  border-width: 10px 0 0 10px;
+}
+.tooltip__text:before {
+  content: '';
+  position: absolute;
+  border-color: transparent transparent transparent #b3b3b3;
+}
+.tooltip__text:after {
+  content: '';
+  position: absolute;
+  border-color: transparent transparent transparent #ffffff;
+  margin: 2px 0 0 1px;
+}
+.tooltip:hover .tooltip__text,
+.tooltip:focus .tooltip__text,
+.tooltip:active .tooltip__text {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
 }
 .block {
   font-size: 19px;

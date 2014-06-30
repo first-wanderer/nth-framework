@@ -1,0 +1,60 @@
+.form {
+  
+  &__group {
+      
+    &--checkbox-custom,
+    &--radio-custom {
+      
+      
+      // Индивидуальный флажок не отмечен
+      
+      input[type="checkbox"] + .form__checkbox-text {
+        
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;          // Предположительный размер
+          height: 20px;         // Предположительный размер
+          content: 'on';
+          background-color: @body-bg; // Фоновый цвет, закрывающий оригинальный флажок
+        }
+      }
+      
+      
+      // Индивидуальный флажок отмечен (поправки к состоянию «не отмечен»)
+      
+      input[type="checkbox"]:checked + .form__checkbox-text {
+        
+        &::before {
+          content: 'off';
+        }
+      }
+      
+      
+      // Индивидуальная радиокнопка не отмечена
+      
+      input[type="radio"] + .form__radio-text {
+        
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;          // Предположительный размер
+          height: 20px;         // Предположительный размер
+          content: 'off';
+          background-color: @body-bg; // Фоновый цвет, закрывающий оригинальную радиокнопку
+        }
+      }
+      
+      // Индивидуальная радиокнопка отмечена (поправки к состоянию «не отмечена»)
+      
+      input[type="radio"]:checked + .form__radio-text {
+        
+        &::before {
+          content: 'on';
+        }
+      }
+    }
+  }
+}

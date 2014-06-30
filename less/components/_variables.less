@@ -49,25 +49,27 @@
   @font-family-base:        @font-family-sans-serif;
   @headings-font-family:    @font-family-sans-serif;
 
+  // Размер шрифта у тега html (для подсчёта rem)
+  
   @font-size-root:          10px;
   
   
   // Размер, базовый интерлиньяж, цвета заголовков
 
   @font-size-base-px:       14px;
-  @line-height-base:        1.4285714em; // Калькулятор — http://riddle.pl/emcalc/
+  @line-height-base:        1.4285714; // Калькулятор — http://riddle.pl/emcalc/ (для Chrome нужно 7 знаков после запятой)
   
-  @font-size-h1-px:         24px;
+  @font-size-h1-px:         36px;
   @font-color-h1:           inherit;
   @font-weight-h1:          400;
   
-  @font-size-h2-px:         18px;
+  @font-size-h2-px:         24px;
   @font-color-h2:           inherit;
   @font-weight-h2:          400;
   
-  @font-size-h3-px:         16px;
+  @font-size-h3-px:         20px;
   @font-color-h3:           inherit;
-  @font-weight-h3:          700;
+  @font-weight-h3:          400;
   
   @font-size-h4-px:         14px;
   @font-color-h4:           inherit;
@@ -84,15 +86,15 @@
   
   // Родитель-зависимые размеры (em)
   
-  @font-size-large:         .85em;
-  @font-size-small:         1.15em;
+  @font-size-large:         1.2em;
+  @font-size-small:         .85em;
 
 
 
 // Таблицы
 // =================================================================================================
 
-  @table-cell-padding:      @padding-base-horizontal;
+  @table-cell-padding:      ~"@{padding-base-vertical} @{padding-base-horizontal}";
   @table-bg:                transparent;
   @table-border-color:      @border-color-base;
 
@@ -111,6 +113,11 @@
   @input-bg--disabled:           @bg-gray-base;
   @input-color--disabled:        @gray;
   @input-border-color--disabled: @border-color-base;
+  
+  
+  // внутренний отступ для флажков и радиокнопок (сами флажки и радиокнопки позиционированы абсолютно)
+  
+  @checkbox-and-radio-left-padding: 2rem;
 
 
 
@@ -162,7 +169,7 @@
   // Базовые внутренние отступы (ячейки таблицы, кнопки, поля ввода...)
   
   @padding-base-vertical:     (@vertical-rhythm-step / 4);
-  @padding-base-horizontal:   (@vertical-rhythm-step / 4) + .1;
+  @padding-base-horizontal:   (@vertical-rhythm-step / 4) + .2;
   
   
   // Базовое время «переходов» (наведения на кнопки, получение фокуса полями ввода...)
@@ -170,9 +177,7 @@
   @transition-time-base:      .15s;
   
   
-  // Единица вертикального ритма (вертикальные отступы в типографике, базовые внутренние отступы...)
-  
-  @vertical-rhythm-step:      round( unit(@font-size-base * @line-height-base, rem) ); // интерлиньяж в rem-ах
+
 
 
 
@@ -216,7 +221,10 @@
   @font-size-h5:            unit(@font-size-h5-px / @font-size-root, rem);
   @font-size-h6:            unit(@font-size-h6-px / @font-size-root, rem);
 
-
+  
+  // Единица вертикального ритма (вертикальные отступы в типографике, базовые внутренние отступы...)
+  
+  @vertical-rhythm-step:      unit(@font-size-base * @line-height-base, rem); // интерлиньяж в rem-ах
 
   
   

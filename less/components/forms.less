@@ -126,7 +126,6 @@ input[type="color"] {
   &__control {
     display: block;
     width: 100%;
-    // height: @input-height-base; // base line-height + padding + border
     padding: @padding-base-vertical @padding-base-horizontal;
     border: 1px solid @input-border-color;
     .border-radius(@input-border-radius);
@@ -140,7 +139,7 @@ input[type="color"] {
     box-shadow: none;
     outline: 0;
     
-    transition: all @transition-time-base linear;
+    transition: all @transition-time-base;
 
     &::-moz-placeholder           { color: @gray; opacity: 1; }  // Firefox
     &:-ms-input-placeholder       { color: @gray; }              // Internet Explorer 10+
@@ -183,7 +182,7 @@ input[type="color"] {
   
   &__label {
     display: inline-block;
-    margin-bottom: (@line-height-base / 2);
+    margin-bottom: (@vertical-rhythm-step / 3);
     font-weight: normal;
   }
   
@@ -192,7 +191,11 @@ input[type="color"] {
   // Пояснение / подсказка
   // ===============================================================================================
   
-  &__help-block {}
+  &__help-block {
+    margin-top: round((@vertical-rhythm-step / 4), 1);
+    font-size: @font-size-small;
+    color: @gray;
+  }
   
   
   
@@ -200,7 +203,7 @@ input[type="color"] {
   // ===============================================================================================
   
   &__group {
-    margin-bottom: @line-height-base;
+    margin-bottom: @vertical-rhythm-step;
     position: relative;
     
     
@@ -227,7 +230,14 @@ input[type="color"] {
     &--select {}
 
     
-    &--btns {}
+    &--btns {
+      margin-bottom: 0;
+      
+      .btn {
+        margin-bottom: @vertical-rhythm-step;
+        margin-right: @vertical-rhythm-step;
+      }
+    }
 
     
     &--checkbox {
@@ -236,7 +246,7 @@ input[type="color"] {
       
       .form__label {
         position: relative;
-        padding-left: 25px;
+        padding-left: @checkbox-and-radio-left-padding;
         margin-bottom: 0;
       }
 
@@ -244,6 +254,10 @@ input[type="color"] {
         position: absolute;
         top: .2em;
         left: 0;
+      }
+      
+      .form__help-block {
+        padding-left: @checkbox-and-radio-left-padding;
       }
     }
 
@@ -254,9 +268,8 @@ input[type="color"] {
       
       .form__label {
         position: relative;
-        padding-left: 25px;
+        padding-left: @checkbox-and-radio-left-padding;
         margin-bottom: 0;
-        cursor: pointer;
       }
 
       input[type="radio"] {
@@ -264,64 +277,9 @@ input[type="color"] {
         top: .2em;
         left: 0;
       }
-    }
-    
-    
-    // Индивидуальное оформление флажков/радиокнопок
-    // ===============================================================================================
       
-    &--checkbox-custom,
-    &--radio-custom {
-      
-      
-      // Индивидуальный флажок не отмечен
-      
-      input[type="checkbox"] + .form__checkbox-text {
-        
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 20px;          // Предположительный размер
-          height: 20px;         // Предположительный размер
-          content: 'on';
-          background-color: @body-bg; // Фоновый цвет, закрывающий оригинальный флажок
-        }
-      }
-      
-      
-      // Индивидуальный флажок отмечен (поправки к состоянию «не отмечен»)
-      
-      input[type="checkbox"]:checked + .form__checkbox-text {
-        
-        &::before {
-          content: 'off';
-        }
-      }
-      
-      
-      // Индивидуальная радиокнопка не отмечена
-      
-      input[type="radio"] + .form__radio-text {
-        
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 20px;          // Предположительный размер
-          height: 20px;         // Предположительный размер
-          content: 'off';
-          background-color: @body-bg; // Фоновый цвет, закрывающий оригинальную радиокнопку
-        }
-      }
-      
-      // Индивидуальная радиокнопка отмечена (поправки к состоянию «не отмечена»)
-      
-      input[type="radio"]:checked + .form__radio-text {
-        
-        &::before {
-          content: 'on';
-        }
+      .form__help-block {
+        padding-left: @checkbox-and-radio-left-padding;
       }
     }
     
@@ -331,43 +289,7 @@ input[type="color"] {
     
     &--checkbox + &--checkbox,
     &--radio + &--radio {
-      margin-top: (@line-height-base / 2) * -1;
-    }
-
-    
-    // «При заполнении возникла ошибка» (этот модификатор добавляется к .form__group)
-    // =============================================================================================
-    
-    &--has-error {
-      
-      .form__label,
-      .form__help-block  {
-        color: @danger;
-      }
-      
-      .form__control {
-        color: @danger;
-        border-color: @danger-border;
-        background-color: @danger-bg;
-      }
-    }
-    
-    
-    // «Успешное заполнение» (этот модификатор добавляется к .form__group)
-    // =============================================================================================
-    
-    &--has-success {
-      
-      .form__label,
-      .form__help-block {
-        color: @success;
-      }
-      
-      .form__control {
-        color: @success;
-        border-color: @success-border;
-        background-color: @success-bg;
-      }
+      margin-top: (@vertical-rhythm-step / 2) * -1;
     }
   }
 }
